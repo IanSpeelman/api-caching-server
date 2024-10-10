@@ -8,6 +8,18 @@ A Node.js command-line application that caches JSON data from APIs.
 - Configurable port, origin URL, and cache TTL
 - Option to clear cache and start fresh
 
+## Requirements
+
+- Node.js
+- Redis server
+
+Redis should be installed and running on the default port (6379) before starting the application. If you haven't installed Redis yet, please follow the official Redis installation guide for your operating system:
+
+- [Redis Getting Started](https://redis.io/docs/latest/get-started/)
+
+Make sure Redis is running before you start the caching server.
+
+
 ## Installation
 
 1. Clone this repository:
