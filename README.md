@@ -28,7 +28,7 @@ A Node.js command-line application that caches JSON data from APIs.
 Run the application with the following command:
 
 ```
-node app.js [options]
+node index.js [options]
 ```
 
 ### Options
