@@ -31,11 +31,13 @@ const server = new http.createServer(async (req, res) => {
             const body = await response.text()
             client.set(`${origin}${url.slice(1)}`, body, { EX: ttl })
             res.setHeader("X-Cache", "MISS")
-            res.end(Buffer.from(body))
+            res.end(Buffer.from(bodsy))
         }
 
     }
     catch (err) {
+        res.statusCode = 500
+        res.end("500 - something went terible wrong...")
         console.log(err)
     }
 
