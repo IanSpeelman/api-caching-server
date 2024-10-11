@@ -29,7 +29,7 @@ const server = new http.createServer(async (req, res) => {
         else {
             const response = await fetch(`${origin}${url}`);
             const body = await response.text()
-            client.set(`${origin}${url.slice(1)}`, body, { EX: ttl })
+            client.set(`${origin}${url}`, body, { EX: ttl })
             res.setHeader("X-Cache", "MISS")
             res.end(Buffer.from(body))
         }
