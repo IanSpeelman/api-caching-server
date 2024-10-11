@@ -21,15 +21,12 @@ const server = new http.createServer(async (req, res) => {
         const url = req.url;
 
         const data = await client.get(`${origin}${url}`)
-        console.log(data)
         if (data) {
-            console.log("cache")
             let response = Buffer.from(data)
             res.setHeader("X-Cache", "HIT")
             res.end(response);
         }
         else {
-            console.log("not cache")
             const response = await fetch(`${origin}${url}`);
             const body = await response.text()
             client.set(`${origin}${url}`, body, { EX: ttl })
